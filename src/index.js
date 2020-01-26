@@ -17,7 +17,6 @@ const server = new ApolloServer({
   context: ({ req }) => ({
     authorization: req.headers.authorization
   }),
-
 });
 
 server.listen().then(({ url }) => {

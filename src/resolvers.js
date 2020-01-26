@@ -1,13 +1,8 @@
-module.exports = {
-    Query: {
-      usuarios: (_, {}, { dataSources }) =>
-        dataSources.contaAPI.getUsuarios(),
-        
-      endereco: (_,{cep}, {dataSources}) =>
-        dataSources.cepAPI.getEndereco({numCep: cep}),
-      /*
-      situacaoClientes: (_, __, { dataSources }) =>
-      dataSources.contaAPI.getSituacaoClientes()
-      */
-    }
-  };
+const { merge } = require('lodash');
+const Usuario = require('./resolvers/usuario-resolver');
+const Endereco = require('./resolvers/endereco-resolver');
+
+const resolvers = merge(Usuario,Endereco);
+
+
+module.exports = resolvers;
