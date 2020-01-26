@@ -13,40 +13,6 @@ class ContaAPI extends RESTDataSource {
   async getUsuarios() {
     return await this.get(`/usuarios`);
   }
-/*  
-  async getUsuarios() {
-    const response = await this.get('/usuarios');
-    return Array.isArray(response)
-      ? response.map(usuarios => this.usuarios(usuarios))
-      : [];
-  }
-*/
-
-
-  /*
-  usuarios(usuarios) {
-    return {
-      id: usuarios.id,
-      idAuth: usuarios.idAuth,
-      email: usuarios.email,
-      nome: usuarios.nome,
-      telefone: usuarios.telefone,
-    };
-  }
-
-  async getSituacaoClientes() {
-    const response = await this.get('/usuarios');
-    return Array.isArray(response)
-      ? response.map(situacao => this.situacaoClientes(situacao))
-      : [];
-  }
-  situacaoClientes(situacao) {
-    return {
-      value: situacao.value,
-      displayName: situacao.displayName
-    };
-  }
- */
 }
 
 module.exports = ContaAPI;

@@ -13,6 +13,11 @@ type Endereco{
   ibge: String,
   gia: String
 }
+
+extend type Query {
+  endereco(cep: String!): Endereco!
+}
+
 `;
 
 module.exports = typeDefs;

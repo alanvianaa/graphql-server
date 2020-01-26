@@ -1,18 +1,13 @@
 const { ApolloServer } = require('apollo-server');
-//############### SCHEMAS ###########################
-const endereco = require('./schemas/endereco-schema');
-const usuario = require('./schemas/usuario-schema');
-const query = require('./schemas/query');
-
-//############# RESOLVERS ##############################
-const resolvers = require('./resolvers/resolvers');
-
-//#################### APIs #########################
+const typeDefs = require('./schemas');
+const resolvers = require('./resolvers');
+/*_______________APIs_________________________________*/
 const ContaAPI = require('./datasources/conta');
 const CepAPI = require('./datasources/cep');
+/*____________________________________________________*/
 
 const server = new ApolloServer({
-  typeDefs:[query,usuario, endereco],
+  typeDefs,
   resolvers,
   dataSources: () => {
     return {

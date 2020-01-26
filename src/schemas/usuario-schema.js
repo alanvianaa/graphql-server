@@ -8,8 +8,8 @@ type Usuario {
   email: String,
   nome: String,
   telefone: String,
-  dtCadastro: Data
-  contas:[Conta]
+  dtCadastro: Data,
+  contas:[Conta],
   tags:[String]
 }
 
@@ -30,6 +30,11 @@ type Conta{
   uf: String,
   telefone: String
 }
+
+extend type Query {
+  usuarios: Usuario!
+}
+
 `;
 
 module.exports = typeDefs;
